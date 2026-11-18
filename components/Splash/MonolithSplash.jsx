@@ -169,7 +169,7 @@ export default function MonolithSplash({ onComplete }) {
           <span>SAVITHA BALAJI — 2026 EDITION</span>
         </div>
         <div>
-          <span>NEW YORK • CHENNAI</span>
+          <span>MAHABALIPURAM • CHENNAI</span>
         </div>
       </div>
 
