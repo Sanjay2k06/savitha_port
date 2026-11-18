@@ -87,9 +87,9 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-[100001] px-6 sm:px-10 lg:px-14 py-4 sm:py-6 flex items-center justify-between transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-[100001] px-4 sm:px-10 lg:px-14 py-3 sm:py-6 flex items-center justify-between transition-all duration-300 ${
           scrolled
-            ? "bg-[#F3F3EF]/90 backdrop-blur-md border-b border-fg/5 py-3 sm:py-4 shadow-sm"
+            ? "bg-[#F3F3EF]/90 backdrop-blur-md border-b border-fg/5 py-2.5 sm:py-4 shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -98,10 +98,11 @@ export default function Navbar() {
           <a
             href="#contact-section"
             onClick={handleContactClick}
-            className="flex items-center gap-2 text-xs sm:text-sm font-bold tracking-[0.18em] uppercase text-fg hover:opacity-70 transition-opacity select-none group cursor-pointer"
+            className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.14em] sm:tracking-[0.18em] uppercase text-fg hover:opacity-70 transition-opacity select-none group cursor-pointer"
           >
-            <GlobeIcon className="w-4 h-4 sm:w-5 sm:h-5 text-current group-hover:rotate-45 transition-transform duration-500" />
-            <span>CONTACT US</span>
+            <GlobeIcon className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-current group-hover:rotate-45 transition-transform duration-500" />
+            <span className="hidden sm:inline">CONTACT US</span>
+            <span className="sm:hidden">CONTACT</span>
           </a>
         </div>
 

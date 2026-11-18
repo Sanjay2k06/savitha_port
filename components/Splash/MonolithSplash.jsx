@@ -153,13 +153,13 @@ export default function MonolithSplash({ onComplete }) {
   return (
     <div
       ref={splashRef}
-      className="fixed inset-0 z-[200000] flex flex-col justify-between bg-[#F3F3EF] text-[#060607] px-6 sm:px-12 py-8 sm:py-10 select-none overflow-hidden"
+      className="fixed inset-0 z-[200000] flex flex-col justify-between bg-[#F3F3EF] text-[#060607] px-4 sm:px-12 py-6 sm:py-10 select-none overflow-hidden h-[100dvh] w-screen"
       style={{ willChange: "transform" }}
     >
       {/* Top Bar: Editorial / Context Meta */}
       <div
         ref={topBarRef}
-        className="w-full flex items-center justify-between text-[11px] sm:text-xs font-mono tracking-[0.2em] uppercase text-[#060607]/60"
+        className="w-full flex items-center justify-between text-[10px] sm:text-xs font-mono tracking-[0.15em] sm:tracking-[0.2em] uppercase text-[#060607]/60"
       >
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-[#060607]/80 animate-pulse" />
@@ -174,11 +174,11 @@ export default function MonolithSplash({ onComplete }) {
       </div>
 
       {/* Centerpiece: Monolith NYC Split Logo Reveal */}
-      <div className="relative w-full flex items-center justify-center overflow-hidden my-auto py-12">
+      <div className="relative w-full flex items-center justify-center overflow-hidden my-auto py-6 sm:py-12 flex-nowrap">
         {/* Left Half of Logo */}
         <div
           ref={leftLogoRef}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] uppercase text-[#060607] select-none"
+          className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] uppercase text-[#060607] select-none flex-shrink-0 whitespace-nowrap"
           style={{
             fontFamily: "'AeonikBold', 'Inter', sans-serif",
             willChange: "transform",
@@ -190,7 +190,7 @@ export default function MonolithSplash({ onComplete }) {
         {/* Center Slot (revealed in the gap like Monolith's image showcase) */}
         <div
           ref={centerSlotRef}
-          className="mx-3 sm:mx-6 w-16 sm:w-24 md:w-32 h-24 sm:h-36 md:h-44 rounded-lg overflow-hidden border border-[#060607]/20 bg-[#E5E5DF] flex-shrink-0 flex items-center justify-center shadow-2xl relative"
+          className="mx-2 sm:mx-6 w-14 sm:w-24 md:w-32 h-20 sm:h-36 md:h-44 rounded-lg overflow-hidden border border-[#060607]/20 bg-[#E5E5DF] flex-shrink-0 flex items-center justify-center shadow-2xl relative"
           style={{ willChange: "transform, opacity" }}
         >
           <img
@@ -205,7 +205,7 @@ export default function MonolithSplash({ onComplete }) {
         {/* Right Half of Logo */}
         <div
           ref={rightLogoRef}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] uppercase text-[#060607] select-none"
+          className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-[-0.04em] uppercase text-[#060607] select-none flex-shrink-0 whitespace-nowrap"
           style={{
             fontFamily: "'AeonikBold', 'Inter', sans-serif",
             willChange: "transform",
@@ -218,7 +218,7 @@ export default function MonolithSplash({ onComplete }) {
       {/* Bottom Bar: Loading Label + Precision Percentage Counter */}
       <div
         ref={bottomBarRef}
-        className="w-full flex items-end justify-between border-t border-[#060607]/15 pt-4 text-xs sm:text-sm font-mono tracking-[0.2em] uppercase text-[#060607]"
+        className="w-full flex items-end justify-between border-t border-[#060607]/15 pt-3 sm:pt-4 text-[11px] sm:text-sm font-mono tracking-[0.16em] sm:tracking-[0.2em] uppercase text-[#060607]"
       >
         <div className="flex items-center gap-3">
           <span className="text-[#060607]/60">(loading)</span>
@@ -228,9 +228,9 @@ export default function MonolithSplash({ onComplete }) {
         </div>
 
         {/* Precision Percentage Counter (00% -> 100%) */}
-        <div className="flex items-baseline gap-1 text-2xl sm:text-3xl font-bold font-mono tracking-wider tabular-nums">
+        <div className="flex items-baseline gap-1 text-xl sm:text-3xl font-bold font-mono tracking-wider tabular-nums">
           <span>{formattedPercent}</span>
-          <span className="text-base sm:text-lg text-[#060607]/60">%</span>
+          <span className="text-sm sm:text-lg text-[#060607]/60">%</span>
         </div>
       </div>
     </div>

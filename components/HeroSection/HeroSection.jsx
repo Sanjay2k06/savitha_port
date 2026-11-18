@@ -22,7 +22,12 @@ const InteractiveLetter = ({ char, index }) => {
         rotate: index % 2 === 0 ? -4 : 4,
         transition: { type: "spring", stiffness: 450, damping: 12 },
       }}
-      whileTap={{ scale: 0.94 }}
+      whileTap={{
+        y: -26,
+        scale: 1.08,
+        rotate: index % 2 === 0 ? -4 : 4,
+        transition: { type: "spring", stiffness: 450, damping: 12 },
+      }}
     >
       {char}
     </motion.span>
@@ -53,15 +58,15 @@ export default function HeroSection() {
   return (
     <section
       id="hero-section"
-      className="relative w-full h-screen min-h-[620px] flex flex-col justify-between select-none overflow-hidden bg-[#F3F3EF] text-[#060607] pt-24 sm:pt-28"
+      className="relative w-full h-[100dvh] min-h-[560px] flex flex-col justify-between select-none overflow-hidden bg-[#F3F3EF] text-[#060607] pt-20 sm:pt-28"
     >
       {/* Center Statement with clean brutalist styling matching the reference */}
-      <div className="flex-1 flex items-center justify-center px-6 sm:px-12 lg:px-20 text-center z-10 py-8 md:py-12">
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-12 lg:px-20 text-center z-10 py-6 md:py-12">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-4xl text-sm sm:text-base md:text-lg lg:text-[1.32rem] font-bold uppercase tracking-[0.16em] sm:tracking-[0.2em] leading-relaxed md:leading-[2.2] text-fg"
+          className="max-w-4xl text-xs sm:text-base md:text-lg lg:text-[1.32rem] font-bold uppercase tracking-[0.14em] sm:tracking-[0.2em] leading-relaxed md:leading-[2.2] text-fg"
         >
           <span className="border-b-[1.5px] border-current pb-0.5">
             COMPUTER SCIENCE STUDENT
@@ -81,11 +86,11 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full px-6 sm:px-10 lg:px-14 flex items-center justify-between text-[10px] sm:text-xs font-bold tracking-[0.16em] uppercase text-[#060607]/75 border-t border-[#060607]/10 pt-3 pb-2 select-none"
+          className="w-full px-4 sm:px-10 lg:px-14 flex items-center justify-between text-[10px] sm:text-xs font-bold tracking-[0.14em] sm:tracking-[0.16em] uppercase text-[#060607]/75 border-t border-[#060607]/10 pt-3 pb-2 select-none"
         >
           {/* Left: Live Time + Location */}
-          <div className="flex items-center gap-4 sm:gap-8">
-            <span className="tabular-nums font-mono text-[11px] sm:text-xs">
+          <div className="flex items-center gap-3 sm:gap-8">
+            <span className="tabular-nums font-mono text-[10px] sm:text-xs">
               {timeStr || "WED 5:01:42 AM"}
             </span>
             <span className="hidden sm:inline">CHENNAI, INDIA</span>
@@ -97,7 +102,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right: Social & Contact Links */}
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex items-center gap-3 sm:gap-6 text-[10px] sm:text-xs">
             <a
               href="https://www.linkedin.com/in/savitha-balaji-415558439"
               target="_blank"
@@ -124,11 +129,11 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Giant Edge-to-Edge Interactive Kinetic Typography */}
-        <div className="w-full text-center overflow-hidden leading-[0.78] select-none pt-10 -mt-8 pb-0 -mb-2 sm:-mb-3">
+        <div className="w-full text-center overflow-hidden leading-[0.78] select-none pt-8 sm:pt-10 -mt-6 sm:-mt-8 pb-0 -mb-2 sm:-mb-3">
           <h1
             className="w-full text-center font-black tracking-[-0.035em] uppercase text-[#060607] leading-[0.78] whitespace-nowrap flex justify-center items-end"
             style={{
-              fontSize: "clamp(4.2rem, 18.8vw, 20rem)",
+              fontSize: "clamp(3.4rem, 18.2vw, 20rem)",
               fontFamily: "'AeonikBold', 'Inter', -apple-system, sans-serif",
             }}
           >

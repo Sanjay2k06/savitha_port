@@ -510,11 +510,11 @@ html {
 }
 
 .pj-num {
-  font-size: 0.95vw;
+  font-size: clamp(12px, 0.95vw, 16px);
   letter-spacing: 0.2em;
   font-weight: 500;
   color: var(--color-text);
-  min-width: 4vw;
+  min-width: clamp(28px, 4vw, 52px);
   font-family: var(--font-inter), 'Inter', sans-serif;
   opacity: 0.6;
 }
@@ -533,19 +533,19 @@ html {
 }
 
 .pj-name {
-  font-size: 4vw;
+  font-size: clamp(1.4rem, 4vw, 3.8rem);
   font-weight: 500;
   letter-spacing: -0.04em;
-  line-height: 1.05;
+  line-height: 1.08;
   text-transform: lowercase;
 }
 
 .pj-role {
-  font-size: 1vw;
+  font-size: clamp(11px, 1vw, 14px);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 500;
-  opacity: 0.55;
+  opacity: 0.65;
   color: var(--color-text);
 }
 
@@ -555,12 +555,12 @@ html {
 }
 
 .pj-note {
-  font-size: 1vw;
+  font-size: clamp(13px, 1vw, 15px);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: -0.01em;
   color: var(--color-text);
-  opacity: 0.7;
+  opacity: 0.75;
   max-width: 60ch;
 }
 
@@ -1527,26 +1527,19 @@ html {
   }
 }
 
-/* ── TOUCH DEVICE HOVER CLEANUP ──
-   Some of the nav/CTA components use :hover for reveal effects. On touch
-   devices those hovers either "stick" after tap or never fire at all, so
-   we disable them here to keep tap feedback consistent. */
-@media (hover: none) and (pointer: coarse) {
-  .pj-link:hover {
-    padding-left: 0;
-    color: var(--color-text);
-  }
+/* ── TOUCH & MOBILE INTERACTION ANIMATIONS ──
+   Ensure full kinetic feedback and slide animations work seamlessly across all touch, mobile and desktop screens without reduction. */
+.pj-link:active,
+.pj-link:focus-visible {
+  padding-left: 14px;
+  color: var(--color-accent);
+}
 
-  .pj-link:hover .pj-num,
-  .pj-link:hover .pj-role,
-  .pj-link:hover .pj-kind,
-  .pj-link:hover .pj-note {
-    opacity: 0.6;
-    color: var(--color-text);
-  }
-
-  .pj-link:hover .pj-arrow {
-    transform: none;
-  }
+.pj-link:active .pj-num,
+.pj-link:active .pj-role,
+.pj-link:active .pj-kind,
+.pj-link:active .pj-note {
+  opacity: 1;
+  color: var(--color-accent);
 }
 
